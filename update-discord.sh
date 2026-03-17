@@ -10,7 +10,7 @@ if ! current_version=$(dpkg -s discord 2>/dev/null | grep -E '^Version:' | awk '
 fi
 
 # Прямая ссылка на последний .deb (через редирект)
-update_url="https://discord.com/api/download?platform=linux&format=deb"
+update_url="https://discord.com/api/download/stable?platform=linux&format=deb"
 download_url=$(curl -fsSL -w "%{url_effective}" -o /dev/null "$update_url")
 
 # Извлекаем версию из имени файла (discord-0.0.82.deb → 0.0.82)
